@@ -1,0 +1,339 @@
+/*! HTML5 Boilerplate v9.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: var(--primary-text-colour);
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+}
+
+/*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Customize the background color to match your design.
+   */
+
+::-moz-selection {
+  background: var(--text-selection-colour);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--text-selection-colour);
+  text-shadow: none;
+}
+
+/*
+   * A better looking default horizontal rule
+   */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--border-colour);
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+   * Remove default fieldset styles.
+   */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+   * Allow only vertical resizing of textareas.
+   */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+     Author's custom styles
+  ========================================================================== */
+
+
+:root {
+  /* Font scaler */
+  --scaler-from: 320;
+  --scaler-to: 600;
+  --font-scaler: calc((100vw - (var(--scaler-from) * 1px)) / (var(--scaler-to) - var(--scaler-from)));
+
+  --gap-50: clamp(2px, calc(2px + (2 * var(--font-scaler))), 4px);
+
+
+  /* Page styles */
+  --page-margin: 1rem;
+  --page-padding: calc(2 * var(--page-margin));
+
+  --brand-font-size: clamp(24px, calc(24px + (8 * var(--font-scaler))), 32px);
+  --intro-font-size: clamp(48px, calc(48px + (16 * var(--font-scaler))), 64px);
+  --smaller-font-size: clamp(16px, calc(16px + (4 * var(--font-scaler))), 20px);
+  --normal-font-size: clamp(18px, calc(18px + (6 * var(--font-scaler))), 24px);
+  
+  --photo-width: clamp(100px, calc(100px + (50 * var(--font-scaler))), 150px);
+
+  --page-bg-base-colour: rgb(242,240,236);
+  --page-bg-gradient: linear-gradient(0deg, rgb(255,255,255) 0%, var(--page-bg-base-colour) 100%);
+  --primary-text-colour: #222;
+  --secondary-text-colour: #6e6e6e;
+  --emphasis-colour: #b55e0a;
+  --text-selection-colour: #b3d4fc;
+  --image-border-colour: #fff;
+  --link-colour: #2778bb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg-base-colour: rgba(22,21,21);
+    --page-bg-gradient: linear-gradient(0deg, rgba(50,48,45) 0%, rgba(22,21,21) 100%);
+    --primary-text-colour: #eee;
+    --secondary-text-colour: #808080;
+    --emphasis-colour: #f27e0f;
+    --text-selection-colour: #b3d4fc;
+    --image-border-colour: #333;
+    --link-colour: #3a96e2;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  text-wrap: pretty;
+  background: var(--page-bg-base-colour);
+  background: var(--page-bg-gradient);
+}
+
+a {
+  color: var(--link-colour);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 75ch;
+  margin: var(--page-margin) auto 0;
+  padding: var(--page-padding);
+  min-height: calc(100vh - (2 * var(--page-margin)));
+  justify-content: center;
+}
+
+header {
+  font-size: 2em;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--brand-font-size);
+  line-height: 1;
+  font-weight: normal;
+}
+
+header:after,
+main:after {
+  display: block;
+  content: "—";
+  margin-top: 0.5em;
+}
+
+.brand__name {
+  font-weight: 800;
+}
+
+.brand__title {
+  color: var(--secondary-text-colour);
+}
+
+.brand__pic {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: var(--photo-width);
+  order: -1;
+  margin-bottom: 0.5em;
+  border: 5px solid var(--image-border-colour);
+}
+
+.links {
+  font-size: var(--smaller-font-size);
+  display: block;
+}
+
+.intro {
+  font-weight: normal;
+  font-size: var(--intro-font-size);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.intro strong {
+  font-weight: normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+main {
+  font-size: 2em;
+}
+
+main p {
+  font-size: var(--normal-font-size);
+  line-height: 1.4;
+}
+
+main p:last-child {
+  margin-bottom: 1em;
+}
+
+main em {
+ color: var(--emphasis-colour);
+ font-style: normal;
+}
+
+footer {
+  color: var(--secondary-text-colour);
+  font-size: var(--smaller-font-size);
+}
+
+/* ==========================================================================
+     Helper classes
+     ========================================================================== */
+
+/*
+   * Hide visually and from screen readers
+   */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+   * Extends the .visually-hidden class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+   * Hide visually and from screen readers, but maintain layout
+   */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+   * Clearfix: contain floats
+   *
+   * The use of `table` rather than `block` is only necessary if using
+   * `::before` to contain the top-margins of child elements.
+   */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+
+
+
+
+
+
+
