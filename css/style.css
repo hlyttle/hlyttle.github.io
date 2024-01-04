@@ -186,7 +186,6 @@ main:after {
 
 .brand__pic {
   border-radius: 50%;
-  aspect-ratio: 1 / 1;
   width: var(--photo-width);
   order: -1;
   margin-bottom: 0.5em;
