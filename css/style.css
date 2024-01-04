@@ -217,8 +217,8 @@ main {
 }
 
 main p {
-  font-size: var(--normal-font-size);
-  line-height: 1.4;
+  font-size: var(--smaller-font-size);
+  line-height: 1.6;
 }
 
 main p:last-child {
